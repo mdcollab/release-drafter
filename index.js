@@ -33,6 +33,8 @@ module.exports = (app) => {
       return
     }
 
+      log({ app, context, message: config })
+
     const { draftRelease, lastRelease } = await findReleases({ app, context, config['ignore-prereleases'] })
     const {
       commits,
