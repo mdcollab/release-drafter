@@ -33,7 +33,7 @@ module.exports = (app) => {
       return
     }
 
-    const { draftRelease, lastRelease } = await findReleases({ app, context })
+    const { draftRelease, lastRelease } = await findReleases({ app, context, config.ignorePrereleases })
     const {
       commits,
       pullRequests: mergedPullRequests,
@@ -94,6 +94,7 @@ function getInput({ config } = {}) {
       version: core.getInput('version') || undefined,
       tag: core.getInput('tag') || undefined,
       name: core.getInput('name') || undefined,
+      ignorePrereleases: core.getInput('ignore-prereleases') || false,
     }
   }
 

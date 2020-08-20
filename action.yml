@@ -38,6 +38,11 @@ inputs:
       A boolean indicating whether the relase being created or updated is a prerelease.
     required: false
     default: ''
+  ignore-prereleases:
+    description: |
+      A boolean indicating whether to ignore prereleases to find out next tag version.
+    required: false
+    default: ''
 outputs:
   id:
     description: The ID of therelease that was created or updated.
