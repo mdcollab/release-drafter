@@ -35,7 +35,7 @@ module.exports = (app) => {
 
       log({ app, context, message: config })
 
-    const { draftRelease, lastRelease } = await findReleases({ app, context, config['ignore-prereleases'] })
+    const { draftRelease, lastRelease } = await findReleases({ app, context, config })
     const {
       commits,
       pullRequests: mergedPullRequests,
