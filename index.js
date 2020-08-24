@@ -194,6 +194,7 @@ module.exports = (app, { getRouter }) => {
     } else {
       log({ context, message: 'Updating existing release' })
       createOrUpdateReleaseResponse = await updateRelease({
+        app,
         context,
         draftRelease,
         releaseInfo,
